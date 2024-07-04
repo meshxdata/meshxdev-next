@@ -3,7 +3,7 @@ import ParticleSystem from '../ParticleSystem';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative bg-[#171819] scroll-smooth min-h-screen">
+    <div className="bg-[#171819] scroll-smooth min-h-screen">
       <ParticleSystem />
       <div className="relative z-10">{children}</div>
       <style jsx global>{`
