@@ -1,6 +1,8 @@
-import Layout from "../components/layout";
+import Footer from "../components/Footer";
+import Layout from "../components/Layouts/home-layout";
 
 const Careers = () => (
+  <>
   <Layout>
     <section className="body">
       <div className="separator-line"></div>
@@ -128,6 +130,8 @@ const Careers = () => (
       </section>
     </section>
   </Layout>
+  <Footer />
+  </>
 );
 
 export default Careers;

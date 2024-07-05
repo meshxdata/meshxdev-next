@@ -1,3 +1,231 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body {
+    background-color: var(--bg, #171819);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 16px 0;
+  }
+  
+  .banner-image {
+    aspect-ratio: 25;
+    object-fit: auto;
+    object-position: center;
+    width: 1480px;
+    background-blend-mode: screen, normal;
+  }
+  
+  @media (max-width: 991px) {
+    .banner-image {
+      max-width: 100%;
+    }
+  }
+  
+  .logo-image {
+    aspect-ratio: 5.56;
+    object-fit: auto;
+    object-position: center;
+    width: 184px;
+    align-self: flex-start;
+    max-width: 100%;
+    margin: 153px 0 0 142px;
+  }
+  
+  @media (max-width: 991px) {
+    .logo-image {
+      margin: 40px 0 0 10px;
+    }
+  }
+  
+  .separator-line {
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    background-color: rgba(255, 255, 255, 0.17);
+    margin-top: 58px;
+    width: 1196px;
+    max-width: 100%;
+    height: 1px;
+  }
+  
+  @media (max-width: 991px) {
+    .separator-line {
+      margin-top: 40px;
+    }
+  }
+  
+  .main-content {
+    display: flex;
+    margin-top: 99px;
+    width: 100%;
+    max-width: 1196px;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 991px) {
+    .main-content {
+      margin-top: 40px;
+    }
+  }
+  
+  .header-title {
+    font: 400 36px/133% Montserrat, sans-serif;
+    letter-spacing: 0.36px;
+    color: var(--body, rgba(255, 255, 255, 0.68));
+  }
+  
+  .description-text {
+    margin-top: 44px;
+    font: 300 20px/30px Inter, sans-serif;
+    letter-spacing: 0.2px;
+    color: var(--body, rgba(255, 255, 255, 0.68));
+  }
+  
+  @media (max-width: 991px) {
+    .description-text {
+      margin-top: 40px;
+    }
+  }
+  
+  .job-section {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media (max-width: 991px) {
+    .job-section {
+      margin-top: 40px;
+    }
+  }
+  
+  .job-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 991px) {
+    .job-list {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+  
+  .job-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: var(--body, rgba(255, 255, 255, 0.68));
+  }
+  
+  .job-title {
+    font: 500 24px Montserrat, sans-serif;
+    color: var(--orange, #ff6000);
+    letter-spacing: 0.24px;
+  }
+  
+  .job-location,
+  .job-overview,
+  .job-responsibilities,
+  .job-qualifications {
+    margin-top: 20px;
+    font-family: Inter, sans-serif;
+    letter-spacing: 0.16px;
+    line-height: 160%;
+  }
+  
+  .job-responsibilities ul,
+  .job-qualifications ul {
+    list-style-type: disc;
+    margin: 10px 0 0 20px;
+  }
+  
+  .apply-button {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 133%;
+    color: #fff;
+    background-color: var(--orange, #ff6000);
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .apply-button {
+      padding: 9px 20px;
+    }
+  }
+  
+  .apply-text {
+    margin: 0;
+  }
+  
+  .apply-icon {
+    width: 24px;
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+  }
+  
+  .footer {
+    margin-top: 241px;
+    padding-top: 40px;
+    width: 100%;
+    max-width: 1196px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+  
+  @media (max-width: 991px) {
+    .footer {
+      margin-top: 40px;
+    }
+  }
+  
+  .footer-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 11px;
+    color: var(--body, rgba(255, 255, 255, 0.68));
+    line-height: 24px;
+    padding: 10px 0;
+  }
+  
+  .footer-logo {
+    width: 95px;
+    aspect-ratio: 5.88;
+    object-fit: auto;
+    object-position: center;
+    fill: var(--orange, #ff6000);
+  }
+  
+  .footer-text {
+    margin-top: 16px;
+  }
+  
+  .footer-link {
+    color: var(--orange, #ff6000);
+    text-decoration: underline;
+  }
+  
