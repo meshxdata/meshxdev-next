@@ -4,14 +4,6 @@ FROM node:lts AS builder
 # Set working directory
 WORKDIR /app
 
-# Install necessary dependencies
-RUN apk update && apk add --no-cache \
-    build-base \
-    cairo-dev \
-    jpeg-dev \
-    pango-dev \
-    giflib-dev
-
 # Install npm dependencies
 COPY package.json package-lock.json ./
 RUN npm ci
@@ -27,14 +19,6 @@ FROM node:lts as runner
 
 # Set working directory
 WORKDIR /app
-
-# Install necessary dependencies for production
-RUN apk update && apk add --no-cache \
-    build-base \
-    cairo-dev \
-    jpeg-dev \
-    pango-dev \
-    giflib-dev
 
 # Environment variables
 ENV NODE_ENV production

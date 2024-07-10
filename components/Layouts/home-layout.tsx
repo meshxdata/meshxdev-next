@@ -7,7 +7,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <ParticleSystem />
       <div className="relative z-10">{children}</div>
       <style jsx global>{`
-        #particleCanvas {
+        #defaultCanvas0 {
           position: absolute;
           top: 0;
           left: 0;
