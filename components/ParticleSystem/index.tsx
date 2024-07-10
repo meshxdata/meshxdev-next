@@ -17,7 +17,7 @@ const ParticleSystem = () => {
         let angle = 0;
       
         p.setup = ()=>  {``
-          p.createCanvas(p.windowWidth, 780, p.WEBGL).parent(renderRef.current);
+          p.createCanvas(p.windowWidth, 780).parent(renderRef.current);
           p.background('#171819');
       
           for (let x = 0; x < gridSize; x++) {
