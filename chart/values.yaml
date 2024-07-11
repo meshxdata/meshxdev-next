@@ -1,0 +1,58 @@
+
+replicaCount: 1
+
+image:
+  repository: chaturanga/website
+  pullPolicy: Never
+  tag: "latest"
+
+imagePullSecrets:
+  - name: docker-registry
+
+serviceAccount:
+  create: true
+ 
+podAnnotations: {}
+
+podSecurityContext:
+  fsGroup: 2000
+
+securityContext:
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: meshx.dev
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+resources:
+  cpu: 100m
+  memory: 128Mi
+requests:
+  cpu: 100m
+  memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
