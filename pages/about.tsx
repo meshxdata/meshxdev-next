@@ -1,13 +1,16 @@
-import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
-// import Layout from '../layouts/Layout';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import fs from 'fs';
-import path from 'path';
-import styles from '../styles/about.module.css';
+import { GetStaticProps } from "next";
+import Image from "next/image";
+import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import fs from "fs";
+import path from "path";
+import styles from "../styles/about.module.css";
+import Layout from "../components/Layouts/default-layout";
+import AboutAnimation from "../components/ParticleSystem/about";
+import ParticleSystem from "../components/ParticleSystem";
+import DataMesh from "../components/DataMesh";
 // import DataMeshWhatIs from '../components/DataMeshWhatIs';
 
 interface AboutPageProps {
@@ -16,7 +19,7 @@ interface AboutPageProps {
 
 const AboutPage: React.FC<AboutPageProps> = ({ source }) => {
   return (
-    // <Layout title="meshX">
+    <Layout>
       <main className="font-inter relative">
         <div className="w-full justify-items-center">
           <div>
@@ -101,7 +104,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ source }) => {
                   </div>
                 </div>
               </section>
-              
+              <DataMesh />
               <section className={styles.infoText}>
                 <p>Our Team</p>
                 <p>
@@ -115,18 +118,18 @@ const AboutPage: React.FC<AboutPageProps> = ({ source }) => {
                 <p>
                   Are you passionate about data and technology? Do you want to
                   be part of a team that is shaping the future of data
-                  architecture? Visit our{' '}
+                  architecture? Visit our{" "}
                   <a href="/careers" className={styles.link}>
                     Careers Page
-                  </a>{' '}
-                  to explore current opportunities and learn more about what it’s
-                  like to work at MeshX.
+                  </a>{" "}
+                  to explore current opportunities and learn more about what
+                  it’s like to work at MeshX.
                 </p>
                 <p>Contact Us</p>
                 <p>
                   We’d love to hear from you! Whether you’re interested in our
                   solutions, have questions, or just want to learn more about
-                  what we do, get in touch with us through our{' '}
+                  what we do, get in touch with us through our{" "}
                   <a href="/contact" className={styles.link}>
                     Contact Page
                   </a>
@@ -144,13 +147,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ source }) => {
         </div>
         <Footer />
       </main>
-    // </Layout>
+    </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const filePath = path.join(process.cwd(), 'content', 'cookies-policy.md');
-  const source = fs.readFileSync(filePath, 'utf8');
+  const filePath = path.join(process.cwd(), "content", "cookies-policy.md");
+  const source = fs.readFileSync(filePath, "utf8");
   const mdxSource = await serialize(source);
 
   return {

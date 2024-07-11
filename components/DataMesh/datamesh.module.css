@@ -1,0 +1,137 @@
+.container {
+  background-color: var(--bg, #171819);
+  display: flex;
+  padding-top: 28px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionHero {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  min-height: 575px;
+  width: 100%;
+  max-width: 1455px;
+  align-items: center;
+  font-size: 20px;
+  color: var(--body, rgba(255, 255, 255, 0.68));
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.2px;
+  line-height: 32px;
+  justify-content: center;
+  padding: 80px 60px;
+}
+
+@media (max-width: 991px) {
+  .sectionHero {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contentWrapper {
+  position: relative;
+  display: flex;
+  width: 697px;
+  max-width: 100%;
+  flex-direction: column;
+  margin: 69px 0 12px;
+}
+
+@media (max-width: 991px) {
+  .contentWrapper {
+    margin-top: 40px;
+  }
+}
+
+.logoImage {
+  aspect-ratio: 5.56;
+  object-fit: auto;
+  object-position: center;
+  width: 388px;
+  align-self: center;
+  max-width: 100%;
+}
+
+.description {
+  font-family: Inter, sans-serif;
+  /* margin-top: 93px; */
+}
+
+@media (max-width: 991px) {
+  .description {
+    max-width: 100%;
+    /* margin-top: 40px; */
+  }
+}
+
+.sectionDataMesh {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  align-self: stretch;
+  position: relative;
+  min-height: 544px;
+  /* margin-top: 159px; */
+  width: 100%;
+  padding: 70px 60px;
+}
+
+@media (max-width: 991px) {
+  .sectionDataMesh {
+    max-width: 100%;
+    /* margin-top: 40px; */
+    padding: 0 20px;
+  }
+}
+
+.dataMeshContent {
+  position: relative;
+  display: flex;
+  width: 713px;
+  max-width: 100%;
+  flex-direction: column;
+  margin: -140px 0 30px;
+}
+
+@media (max-width: 991px) {
+  .dataMeshContent {
+    /* margin-top: 40px; */
+  }
+}
+
+.dataMeshTitle {
+  color: var(--orange, #ff6000);
+  letter-spacing: 0.4px;
+  align-self: center;
+  font: 500 40px/133% Montserrat, sans-serif;
+}
+
+.dataMeshDescription {
+  color: var(--body, rgba(255, 255, 255, 0.68));
+  text-align: center;
+  letter-spacing: 0.2px;
+  /* margin-top: 16px; */
+  font: 400 20px/32px Inter, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .dataMeshDescription {
+    max-width: 100%;
+  }
+}
