@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: chaturanga/website
+  repository: chat/website
   pullPolicy: Never
   tag: "latest"
 
