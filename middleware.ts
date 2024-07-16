@@ -1,28 +1,3 @@
-// import { clerkMiddleware, getAuth } from "@clerk/nextjs/server";
-// import { NextResponse } from "next/server";
-// import { NextRequest } from "next/server";
-
-// const isProtectedPage = (path: string) => {
-//   const protectedPaths = ['/docs', '/user'];
-//   return protectedPaths.some((protectedPath) => path.startsWith(protectedPath));
-// };
-
-// export default clerkMiddleware((req: NextRequest) => {
-//   const { userId } = getAuth(req);
-
-//   if (isProtectedPage(req.nextUrl.pathname) && !userId) {
-//     const signInUrl = new URL('/sign-in', req.url);
-//     signInUrl.searchParams.set('redirect_url', req.url);
-//     return NextResponse.redirect(signInUrl);
-//   }
-
-//   return NextResponse.next();
-// });
-
-// export const config = {
-//   matcher: ['/docs/:path*', '/user/:path*'],
-// };
-
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 // Define routes that should be protected
