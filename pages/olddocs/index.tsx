@@ -22,7 +22,6 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ content, title }) => {
     return (
       <Layout>
-        <ClerkProvider>
         <main className="font-inter relative">
           <div className="w-full justify-items-center">
             <section className={styles.container}>
@@ -87,7 +86,6 @@ const Home: React.FC<HomeProps> = ({ content, title }) => {
           </div>
           <Footer />
         </main>
-        </ClerkProvider>
       </Layout>
     );
   };

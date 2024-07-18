@@ -5,7 +5,6 @@ import styles from "./header.module.css";
 
 const Header: React.FC = () => {
   return (
-    <ClerkProvider>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
           <img
@@ -20,7 +19,6 @@ const Header: React.FC = () => {
           <UserButton />
         </SignedIn>
       </header>
-    </ClerkProvider>
   );
 };
 
