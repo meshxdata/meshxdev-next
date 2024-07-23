@@ -14,10 +14,10 @@ export default function GetStartedForm() {
     const formData = new FormData(e.target as HTMLFormElement);
     const base = new Airtable({
       apiKey:
-        "patWHwBJyYO3lvQOz.7659832b0ad80b29263f0b8f802917f65c04a80320def501cf8a84f1978ad22e",
+        process.env.NEXT_PUBLIC_AIRTABLE_API_KEY as string,
     });
 
-    const table = base.base("appGNJtpLEGfEBNtN" as string).table("waitlist");
+    const table = base.base(process.env.NEXT_PUBLIC_AIRTABLE_BASEID as string).table("waitlist");
     const email_address = formData?.get("email_address") as string;
     setIsLoading(true);
     if (email_address) {
