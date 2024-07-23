@@ -15,11 +15,11 @@ const MainContent: React.FC = () => {
           <p><strong>NEOS Data Product Pipeline Builder</strong></p>
           <p>This page includes information about the data product builder on NEOS, as well as the available transformers in it with usage examples.</p>
           <p>NEOS Gateway version: v0.11.0-696</p>
-          <p><strong>Description</strong></p>
+          <p className='mt-10'><strong>Description</strong></p>
           <p>The NEOS pipeline builder is a low-code tool that is created to allow users define a data transformations pipeline in a friendly way, by eliminating the need of writing advanced code scripts, as well as maintaining and debugging them inside the platform.</p>
           <p>From the user perspective, a NEOS pipeline builder for a data product named "My Data Product" is simply a JSON document with all the configuration, transformations and actions, that eventually construct the code scripts underneath.</p>
           <p>At its basis, NEOS pipeline builder is a collection of Python helper functions based on NEOS' data processing framework, <a href="https://spark.apache.org/" target="_blank" rel="noopener noreferrer">Apache Spark</a> (PySpark). Those helper functions receive a user input that include dataframe(s) and a set of params, validate it, process it based on some logic and produce a dataframe output.</p>
-          <p><strong>Features</strong></p>
+          <p className='mt-10'><strong>Features</strong></p>
           <p>The NEOS pipeline builder JSON base template contains the following main components:</p>
           <ol>
             <li>Configuration (config)</li>

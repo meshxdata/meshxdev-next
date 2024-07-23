@@ -1,5 +1,5 @@
 import React from "react";
-import { useClerk } from "@clerk/nextjs";
+import { useClerk, UserButton } from "@clerk/nextjs";
 
 const Header: React.FC = () => {
   const { signOut } = useClerk();
@@ -17,6 +17,7 @@ const Header: React.FC = () => {
           <div>DOCUMENTATION</div>
         </div>
         <button className="flex gap-2.5 justify-center px-4 py-1 text-base leading-6 rounded border border-solid border-white border-opacity-10 text-black text-opacity-60">
+          <UserButton/>
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/c4a31099c238c5d910059ed3d95949e477b233f736cd161f22422d21d8ef601b?apiKey=ccbd9f716d3746849ccb6bd0200e2166&"
