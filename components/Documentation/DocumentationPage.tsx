@@ -22,8 +22,9 @@ const DocumentationPage: React.FC = () => {
               <Sidebar />
               <MainContent />
             </div>
+            <CodeBlock />
           </div>
-          <CodeBlock />
+
         </main>
       </div>
       <Footer />

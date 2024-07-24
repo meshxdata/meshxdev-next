@@ -1,12 +1,11 @@
 import Layout from "../components/Layouts/login-layout";
-import Footer from "../components/Footer/login-footer";
-import Login from "../components/Login/index";
+import Signup from "../components/Signup";
 
 const LoginPage = () => {
   return (
     <>
       <Layout>
-        <Login />
+        <Signup />
       </Layout>
     </>
   );

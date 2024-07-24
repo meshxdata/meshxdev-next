@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import BackButton from "./BackButton";
-import LoginForm from "./LoginForm";
-import AlternativeLogin from "./AlternativeLogin";
-import { SignIn } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 
-const Login: React.FC = () => {
+const Signup: React.FC = () => {
 
   return (
     <main className="flex flex-col justify-center bg-slate-100">
@@ -15,7 +13,7 @@ const Login: React.FC = () => {
               <h1>Documentation</h1>
             </header>
           <BackButton />
-          <SignIn routing="hash" forceRedirectUrl={'/docs'}/>
+          <SignUp routing="hash" forceRedirectUrl={'/docs'}/>
           {/* <BackButton />
           <section className="flex flex-col justify-center px-16 pt-10 pb-12 mt-5 bg-white rounded-2xl max-md:px-5 max-md:max-w-full">
             <header className="flex gap-1 text-base font-semibold leading-6 uppercase whitespace-nowrap text-zinc-500">
@@ -34,4 +32,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Signup;
