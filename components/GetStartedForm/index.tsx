@@ -1,56 +1,13 @@
-import Airtable from "airtable";
 import { useState } from "react";
-import axios from "axios";
+import { useMail } from "../../hooks/useMail";
 
 export default function GetStartedForm() {
   const [email, setEmail] = useState("");
-  const [showResponse, setShowResponse] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  async function submit(e: any) {
-    e.preventDefault();
-    setShowResponse(true);
-    const formData = new FormData(e.target as HTMLFormElement);
-    const base = new Airtable({
-      apiKey:
-        "patWHwBJyYO3lvQOz.7659832b0ad80b29263f0b8f802917f65c04a80320def501cf8a84f1978ad22e",
-    });
-
-    const table = base.base("appGNJtpLEGfEBNtN" as string).table("waitlist");
-    const email_address = formData?.get("email_address") as string;
-    setIsLoading(true);
-    if (email_address) {
-      await table.create({
-        email: email_address,
-        sentDate: new Date().toISOString(),
-      });
-    }
-
-    // Email details
-    const message = {
-      to: email, // Set the recipient's email address
-      from: "chathuranga@surfncode.io", // Set your verified sender email address
-      templateId: "d-4397fcb91c1f475987dd1847438db296", // Set the template ID you created in SendGrid
-      dynamicTemplateData: {},
-    };
-
-    const res = await axios({
-      method: "post",
-      url: "/api/email",
-      data: {
-        message,
-      },
-    });
-
-    console.log(res);
-    setEmail("");
-    setIsLoading(false);
-  }
+  const { isLoading, showResponse, sendEmail } = useMail();
 
   return (
     <form
-      onSubmit={submit}
+      onSubmit={(e) => sendEmail(e, email, setEmail)}
       className="bg-opacity-90 p-6 rounded-md max-w-2xl w-full mx-4 text-center mt-32"
     >
       <h2 className="text-white/70 text-[24px] font-normal font-montserrat mb-4">
