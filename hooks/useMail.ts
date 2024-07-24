@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Airtable from "airtable";
 import axios from "axios";
+import { EMAIL_STARTER_TEMPLATE_ID } from "../utils/email.consts";
 
 export function useMail() {
   const [isLoading, setIsLoading] = useState(false);
   const [showResponse, setShowResponse] = useState(false);
 
-  async function submit(e: any, email: string, setEmail: (email: string) => void) {
+  async function sendEmail(e: any, email: string, setEmail: (email: string) => void) {
     e.preventDefault();
     setShowResponse(true);
     const formData = new FormData(e.target as HTMLFormElement);
@@ -26,9 +27,9 @@ export function useMail() {
 
     // Email details
     const message = {
-      to: email, // Set the recipient's email address
-      from: "chathuranga@surfncode.io", // Set your verified sender email address
-      templateId: "d-4397fcb91c1f475987dd1847438db296", // Set the template ID you created in SendGrid
+      to: email,
+      from: process.env.NEXT_PUBLIC_EMAIL_SENDER, 
+      templateId: EMAIL_STARTER_TEMPLATE_ID, 
       dynamicTemplateData: {},
     };
 
@@ -45,5 +46,5 @@ export function useMail() {
     setIsLoading(false);
   }
 
-  return { isLoading, showResponse, submit };
+  return { isLoading, showResponse, sendEmail };
 }

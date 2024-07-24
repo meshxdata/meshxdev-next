@@ -3,11 +3,11 @@ import { useMail } from "../../hooks/useMail";
 
 export default function GetStartedForm() {
   const [email, setEmail] = useState("");
-  const { isLoading, showResponse, submit } = useMail();
+  const { isLoading, showResponse, sendEmail } = useMail();
 
   return (
     <form
-      onSubmit={(e) => submit(e, email, setEmail)}
+      onSubmit={(e) => sendEmail(e, email, setEmail)}
       className="bg-opacity-90 p-6 rounded-md max-w-2xl w-full mx-4 text-center mt-32"
     >
       <h2 className="text-white/70 text-[24px] font-normal font-montserrat mb-4">
