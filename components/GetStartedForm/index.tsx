@@ -7,7 +7,7 @@ export default function GetStartedForm() {
 
   return (
     <form
-      onSubmit={(e) => sendEmail(e, email, setEmail)}
+      onSubmit={(e) => sendEmail(email, setEmail)}
       className="bg-opacity-90 p-6 rounded-md max-w-2xl w-full mx-4 text-center mt-32"
     >
       <h2 className="text-white/70 text-[24px] font-normal font-montserrat mb-4">

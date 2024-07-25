@@ -7,20 +7,18 @@ export function useMail() {
   const [isLoading, setIsLoading] = useState(false);
   const [showResponse, setShowResponse] = useState(false);
 
-  async function sendEmail(e: any, email: string, setEmail: (email: string) => void) {
-    e.preventDefault();
+  async function sendEmail(email: string, setEmail: (email: string) => void) {
     setShowResponse(true);
-    const formData = new FormData(e.target as HTMLFormElement);
     const base = new Airtable({
       apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY as string,
     });
 
     const table = base.base(process.env.NEXT_PUBLIC_AIRTABLE_BASEID as string).table("waitlist");
-    const email_address = formData?.get("email_address") as string;
+
     setIsLoading(true);
-    if (email_address) {
+    if (email) {
       await table.create({
-        email: email_address,
+        email: email,
         sentDate: new Date().toISOString(),
       });
     }
@@ -40,8 +38,7 @@ export function useMail() {
         message,
       },
     });
-
-    console.log(res);
+    
     setEmail("");
     setIsLoading(false);
   }
