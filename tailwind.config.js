@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        spaceGrotesk: ["Space Grotesk", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }
